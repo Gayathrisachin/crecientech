@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+ 
+    <mat-sidenav #drawer class="sidenav mat-drawer-side" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar class="top-bar" style="position: relative;" >
+    <span style="margin-left: 25px;">Crecientech</span>
+      
+      </mat-toolbar> 
+      <mat-nav-list style="color:white" >
+        <span class="glyphicon glyphicon-user"></span> 
+        <mat-list-item class="parent" routerLinkActive="Active" routerLink="/form">
+          View/Modify Profile
+            </mat-list-item>
+            <mat-list-item class="parent" routerLinkActive="Active" routerLink="/list">
+              View/Modify Verification
+                </mat-list-item> 
+          
+        </mat-nav-list>
+        <i style="color:black;border: 1px solid black; border-radius: 50%;    width: 140px;
+            font-size: 61px;
+            padding: 40px;
+            margin: 50px auto 0 auto;" class="icon icon-user d-flex justify-content-center">  </i>
+       
+        <p style="font-size: 20px;text-align: center;font-weight: 500;">John Smith</p>
+        <div style="font-size: 10px;text-align: center;font-weight: 500;padding:10px;background: gray;margin:0 20px">Poperty Manager</div>
+       
+    </mat-sidenav>
+   
+    <mat-sidenav-content>
+      <mat-toolbar class="top-bar">
+          <button
+            type="button"
+            aria-label="Toggle sidenav"
+            mat-icon-button
+            (click)="drawer.toggle()"
+            *ngIf="isHandset$ | async">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <p>Welcome</p>
+        
+        </mat-toolbar>
+   
+      <ng-content></ng-content>
+  <!-- <app-dashboard></app-dashboard> -->
+   
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

@@ -1,0 +1,152 @@
+<app-dashboard>
+   
+       
+        <form [formGroup]="form" class=" dashboard-summery-one" (ngSubmit)="doSubmit()" >
+        
+         <div class="row">
+           <div class="col-md-6">
+            First Name <span style="color: red;">*</span> <mat-form-field class="mat" appearance="outline">
+            <!-- <mat-label>First Name</mat-label> -->
+          <input formControlName="firstName" matInput placeholder="First Name">
+          <span ><i class="fa-fa-user"></i></span>
+          <mat-error *ngIf="hasError('firstName', 'pattern')">please enter characters only</mat-error>
+          <mat-error *ngIf="hasError('firstName', 'maxLength')">Not more than 20 characters</mat-error>
+          <mat-error *ngIf="hasError('firstName', 'required')">This field is required</mat-error>
+          </mat-form-field>
+        </div>
+     
+        <div class="col-md-6">
+            Last Name <span style="color: red;">*</span> <mat-form-field class="mat" appearance="outline">
+            <!-- <mat-label>Last Name</mat-label> -->
+            <input formControlName="lastName" matInput placeholder="Last Name">
+            <mat-error *ngIf="hasError('lastName', 'pattern')">please enter characters only</mat-error>
+          <mat-error *ngIf="hasError('lastName', 'required')">This field is required</mat-error>
+          <mat-error *ngIf="hasError('lastName', 'maxLength')">Not more than 20 characters</mat-error>
+          </mat-form-field>
+       
+        </div>
+         </div>
+         <div class="row">
+    
+         <div class="col-md-6">
+            Date of Birth <span style="color: red;">*</span> <mat-form-field class="mat" appearance="outline">
+                    <!-- <mat-label>Date of Birth</mat-label> -->
+                    <input matInput formControlName="dateOfBirth"
+                    
+                      [matDatepicker]="minmaxvalidation" 
+                      placeholder="Date of Birth">
+                    <mat-datepicker-toggle matSuffix [for]="minmaxvalidation">
+                       </mat-datepicker-toggle>
+                    <mat-datepicker #minmaxvalidation></mat-datepicker>
+                    <mat-error *ngIf="hasError('dateOfBirth', 'required')">This field is required</mat-error>
+                  </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <span>Gender <span style="color: red;">*</span> </span><br>
+            
+                   <mat-radio-group formControlName="gender" >
+                     <mat-radio-button value="male">Male</mat-radio-button>
+                     <mat-radio-button value="female">Female</mat-radio-button>
+                    
+                   </mat-radio-group>
+                 </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-md-6">
+            Email <span style="color: red;">*</span> <mat-form-field class="mat" appearance="outline">
+              <!-- <mat-label>Email</mat-label> -->
+              <input formControlName="email" matInput placeholder="Email">
+            <mat-error *ngIf="hasError('email', 'pattern')">please enter Valid Phone Number</mat-error>
+           
+          </mat-form-field>
+         
+        </div>
+  
+        <div class="col-md-6">
+            Phone Number <span style="color: red;">*</span> <mat-form-field class="mat" appearance="outline">
+              <!-- <mat-label>Phone Number</mat-label> -->
+              <span matPrefix >+91 &nbsp;</span>
+              <input  matInput placeholder="Telephone" digitOnly formControlName="phoneNumber">
+              <mat-icon matSuffix>mode_edit</mat-icon>
+              <mat-error *ngIf="hasError('phoneNumber', 'pattern')">please enter valid number</mat-error>
+       
+            </mat-form-field>
+         </div>
+        </div>
+    <div class="row">
+          <div class="col-md-12">
+            Home City <span style="color: red;">*</span>  <mat-form-field class="mat" appearance="outline">
+               
+                <input formControlName="home" matInput placeholder="Home City">
+                <mat-error *ngIf="hasError('home', 'pattern')">please enter characters only</mat-error>
+              <mat-error *ngIf="hasError('home', 'required')">This field is required</mat-error>
+              <mat-error *ngIf="hasError('home', 'maxLength')">Not more than 20 characters</mat-error>
+              </mat-form-field>
+           </div>
+    </div>
+    <div class="row">
+           <div class="col-md-9" >
+           Official Identification <span style="color: red;">*</span> <mat-form-field class="mat" appearance="outline">
+            
+                <input formControlName="identification" matInput placeholder="Official Identification">
+                <mat-error *ngIf="hasError('identification', 'pattern')">please enter characters only</mat-error>
+              <mat-error *ngIf="hasError('identification', 'required')">This field is required</mat-error>
+              <mat-error *ngIf="hasError('identification', 'maxLength')">Not more than 20 characters</mat-error>
+              </mat-form-field>
+       
+           
+         </div>
+         <span style="padding: 28px;"> <button type="button" >Verified</button></span>
+    </div>
+    
+   
+    <!-- <div formGroupName="newHero">
+      <div class="form-group">
+    <input #newHero  formControlName="language" [value]="searchValue"
+    (keyup.enter)="addHero()">
+ </div>
+ </div>
+
+  <button (click)="addHero(newHero.value)">Add</button> --> 
+  <div formArrayName="languages">
+    <div *ngFor="let lang of languages; let i = index;" [formGroupName]="i" class="row">
+      <div class="col-md-6">
+        Language: <mat-form-field class="mat" appearance="outline">
+          <input matInput type="text" formControlName="lang"></mat-form-field>
+      </div>
+      <div class="col-md-6">
+      Currency: <mat-form-field class="mat" appearance="outline">
+        <input matInput type="text" formControlName="currency"></mat-form-field>
+    </div>
+  </div>
+  </div>
+  <button type="button" (click)="addLanguage(i)">
+    Add language
+  </button>
+ 
+  
+          <hr class="new1">
+              
+          About Yourself <mat-form-field class="mat" appearance="outline" >
+               <!-- <mat-label>Address</mat-label> -->
+               <textarea formControlName="about" matInput placeholder="Address" style="height: 300px;"></textarea>
+               <!-- <mat-error *ngIf="hasError('about', 'required')">This field is required</mat-error> -->
+             </mat-form-field>
+            
+     
+        
+        <div class="but-group">
+          <button  type="button" >Cancel</button>
+          <button type="button" style="margin-left: 10px;" (click)="createRegister()" >Submit</button>
+         
+          <!-- <button mat-raised-button color="primary" type="submit"(click)="createRegister()">Submit</button> -->
+
+        </div>
+          
+      
+
+      </form>
+      
+    </app-dashboard>

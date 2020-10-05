@@ -1,0 +1,35 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "firstName": "vishal",
+      "lastName": "soraganvi",
+      "dateOfBirth": "2020-10-07T18:30:00.000Z",
+      "gender": "male",
+      "email": "ysvishalsrgnv@gmail.com",
+      "phoneNumber": "8088181392",
+      "home": "banhatti",
+      "identification": "dss",
+      "about": "dsvs",
+      "languages": []
+    },
+    {
+      "id": 2,
+      "firstName": "gayatri",
+      "lastName": "s",
+      "dateOfBirth": "2020-10-07T18:30:00.000Z",
+      "gender": "female",
+      "email": "gayatri@gmail.com",
+      "phoneNumber": "8088132545",
+      "home": "bana",
+      "identification": "dfs",
+      "about": "dfgfd",
+      "languages": [
+        {
+          "lang": "dsdfsd",
+          "currency": "fd"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+.example-container {
+    display: inline-block;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  .dashboard-summery-one{
+    background:white;
+    padding: 22px 28px;
+   margin-top:50px;
+    box-shadow: 0px 10px 20px 0px rgba(229, 229, 229, 0.75);
+    border-radius: 4px;
+
+    width: 100%;
+    border-top:8px solid #26a69a;
+  }
+
+form.normal-form{
+    margin: 10px;
+}
+.controles-container{
+    width: 100%;
+   
+}
+.controles-container > *,.full-width {
+width: 100%;
+}
+ 
+
+mat-radio-group mat-radio-button{
+    margin-left: 5px;
+}
+
+.example-form {
+
+  width: 100%;
+}
+.mat{
+  width:100%;
+}
+.example-form{
+ justify-content: center;
+}
+
+.new1{
+
+    border: 0.5px solid black; 
+}
+.mat-form-field-flex:hover .mat-form-field-outline {
+    opacity: 0;
+    transition: none !important;
+ }
+ .mat-form-field-flex:hover .mat-form-field-outline {
+    opacity: 0;
+    transition: none !important;
+ }
+ .but-group{
+    display: flex;
+    justify-content:flex-end;
+    height: 0%;
+    align-items: center;
+ }
