@@ -100,16 +100,7 @@
          </div>
          <span style="padding: 28px;"> <button type="button" >Verified</button></span>
     </div>
-    
-   
-    <!-- <div formGroupName="newHero">
-      <div class="form-group">
-    <input #newHero  formControlName="language" [value]="searchValue"
-    (keyup.enter)="addHero()">
- </div>
- </div>
 
-  <button (click)="addHero(newHero.value)">Add</button> --> 
   <div formArrayName="languages">
     <div *ngFor="let lang of languages; let i = index;" class="row">
       <div class="col-md-6">
