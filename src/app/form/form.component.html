@@ -1,7 +1,7 @@
 <app-dashboard>
    
        
-        <form [formGroup]="form" class=" dashboard-summery-one" (ngSubmit)="doSubmit()" >
+        <form [formGroup]="form" class=" dashboard-summery-one" >
         
          <div class="row">
            <div class="col-md-6">
@@ -111,7 +111,7 @@
 
   <button (click)="addHero(newHero.value)">Add</button> --> 
   <div formArrayName="languages">
-    <div *ngFor="let lang of languages; let i = index;" [formGroupName]="i" class="row">
+    <div *ngFor="let lang of languages; let i = index;" class="row">
       <div class="col-md-6">
         Language: <mat-form-field class="mat" appearance="outline">
           <input matInput type="text" formControlName="lang"></mat-form-field>
